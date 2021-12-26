@@ -7,11 +7,11 @@ tasks:
   install:
     desc: Install {{.cmd_to_check}} binary
     cmds:
-      - sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
-      - sudo chmod a+x /usr/local/bin/yq
-      - yq --version
+      - sudo apt update
+      - sudo apt install -y direnv
+      - direnv --version | head -n1
     vars:
-      cmd_to_check: yq
+      cmd_to_check: direnv  
     silent: true
     #check to see if binary is installed
     status:  
