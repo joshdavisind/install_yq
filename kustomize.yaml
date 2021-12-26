@@ -1,16 +1,18 @@
 version: '3'
 
-
+output: prefixed
 tasks:
   
   default: true
   install:
     desc: Install {{.cmd_to_check}} binary
     cmds:
-      - sudo go get -u go.mozilla.org/sops/cmd/sops
-      - sops --version
+      - echo "Installing Kustomize."
+      - sudo snap install kustomize
+      #- kustomize --version
+    prefix: "Install-{{.cmd_to_check}}"
     vars:
-      cmd_to_check: sops
+      cmd_to_check: kustomize
     silent: true
     #check to see if binary is installed
     status:  

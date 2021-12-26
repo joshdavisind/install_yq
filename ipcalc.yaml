@@ -7,14 +7,11 @@ tasks:
   install:
     desc: Install {{.cmd_to_check}} binary
     cmds:
-      - sudo go get -u go.mozilla.org/sops/cmd/sops
-      - sops --version
+      - sudo apt-get install ipcalc
+      - ipcalc --version
     vars:
-      cmd_to_check: sops
+      cmd_to_check: ipcalc
     silent: true
     #check to see if binary is installed
     status:  
       - command -v "{{.cmd_to_check}}" >/dev/null 2>&1 || exit 1
-    preconditions:
-      - sh: command -v "go" >/dev/null 2>&1 || exit 1
-        msg: Missing go compiler

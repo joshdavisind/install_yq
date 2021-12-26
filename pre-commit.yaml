@@ -7,10 +7,12 @@ tasks:
   install:
     desc: Install {{.cmd_to_check}} binary
     cmds:
-      - curl -s https://fluxcd.io/install.sh | sudo bash
-      - flux --version | head -n1
+      - sudo apt update
+      - sudo snap install  pre-commit --classic
+      - pre-commit --version | head -n1
+      - pre-commit install-hooks
     vars:
-      cmd_to_check: flux  
+      cmd_to_check: pre-commit  
     silent: true
     #check to see if binary is installed
     status:  

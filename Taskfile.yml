@@ -13,3 +13,4 @@ includes:
   kubectl: ./kubectl.yaml  
   terraform: ./terraform.yaml  
   sops: ./sops.yaml  
+  kustomize: ./kustomize.yaml  
