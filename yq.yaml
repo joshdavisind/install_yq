@@ -1,10 +1,16 @@
 version: '3'
 
+vars:
+  cmd_to_check: yq
 tasks:
+  default: true
   install:
-    desc: Install yq binary
+    desc: Install {{.cmd_to_check}} binary
     cmds:
       - sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
       - sudo chmod a+x /usr/local/bin/yq
       - yq --version
     silent: true
+    #check to see if binary is installed
+    status:  
+      - command -v "{{.cmd_to_check}}" >/dev/null 2>&1 && exit 0 
