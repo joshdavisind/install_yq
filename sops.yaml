@@ -7,11 +7,10 @@ tasks:
   install:
     desc: Install {{.cmd_to_check}} binary
     cmds:
-      - sudo apt update
-      - sudo apt install -y direnv
-      - direnv --version | head -n1
+      - sudo go get -u go.mozilla.org/sops/cmd/sops
+      - sops --version
     vars:
-      cmd_to_check: direnv  
+      cmd_to_check: sops
     silent: true
     #check to see if binary is installed
     status:  

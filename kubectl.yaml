@@ -7,11 +7,10 @@ tasks:
   install:
     desc: Install {{.cmd_to_check}} binary
     cmds:
-      - sudo apt update
-      - sudo apt install -y direnv
-      - direnv --version | head -n1
+      - sudo curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+      - kubectl --version | head -n1
     vars:
-      cmd_to_check: direnv  
+      cmd_to_check: kubectl  
     silent: true
     #check to see if binary is installed
     status:  

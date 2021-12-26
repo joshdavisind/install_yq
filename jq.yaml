@@ -8,10 +8,10 @@ tasks:
     desc: Install {{.cmd_to_check}} binary
     cmds:
       - sudo apt update
-      - sudo apt install -y direnv
+      - sudo apt install -y jq
       - direnv --version | head -n1
     vars:
-      cmd_to_check: direnv  
+      cmd_to_check: jq  
     silent: true
     #check to see if binary is installed
     status:  

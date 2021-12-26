@@ -7,11 +7,10 @@ tasks:
   install:
     desc: Install {{.cmd_to_check}} binary
     cmds:
-      - sudo apt update
-      - sudo apt install -y direnv
-      - direnv --version | head -n1
+      - sudo curl -s https://fluxcd.io/install.sh | sudo bash
+      - flux --version | head -n1
     vars:
-      cmd_to_check: direnv  
+      cmd_to_check: flux  
     silent: true
     #check to see if binary is installed
     status:  

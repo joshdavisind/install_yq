@@ -5,3 +5,11 @@ version: '3'
 includes:
   yq: ./yq.yaml
   ansible: ./ansible.yaml
+  flux: ./flux.yaml
+  direnv: ./direnv.yaml  
+  age: ./age.yaml  
+  jq: ./jq.yaml  
+  pre-commit: ./pre-commit.yaml  
+  kubectl: ./kubectl.yaml  
+  terraform: ./terraform.yaml  
+  sops: ./sops.yaml  
